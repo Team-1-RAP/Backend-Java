@@ -248,7 +248,7 @@ public class DbSeederProd implements ApplicationRunner {
         // Implement any necessary checks to ensure it is safe to seed the database in production.
         // This might include checking for an environment variable, a specific command-line argument,
         // or some other safety mechanism.
-        return true; // Change this to your actual safety check
+        return false; // Change this to your actual safety check
     }
 }
 
