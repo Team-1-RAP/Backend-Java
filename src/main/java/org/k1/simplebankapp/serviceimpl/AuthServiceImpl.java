@@ -74,7 +74,7 @@ public class AuthServiceImpl implements AuthService {
             }
 
             userRepository.save(checkUser);
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Username or password invalid");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Your invalid username or password has been attempted " + checkUser.getLoginAttempts() + " times");
         }
         String url = baseUrl + "/oauth/token?username=" + checkUser.getUsername() +
                 "&password=" + request.getPassword() +
